@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  background-color: black;
+  overflow-y: hidden;
+  /* font-family, sans-serif; */
+}
+.video {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.container {
+  justify-content: center;
+}
+
+.barre {
+  text-align: center;
+}
+.acceuil {
+  text-align: center;
+}
+h1 {
+  font-size: 80px;
+  color: rgba(247, 218, 157, 0.984);
+  font-weight: 550;
+  font-family: "Bangers", system-ui;
+  font-style: normal;
+  letter-spacing: 7px;
+  cursor: pointer;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: rgb(53, 145, 243);
+}
+h1 span {
+  transition: 0.5s;
+}
+h1:hover span:nth-child(1) {
+  margin-right: 10px;
+}
+h1:hover span {
+  color: #f0f2f4;
+  text-shadow: 0 0 10px #f0f2f4, 0 0 20px #f0f2f4, 0 0 80px #f0f2f4,
+    0 0 120px #f0f2f4, 0 0 160px #f0f2f4;
+}
+.acceuil span {
+  color: rgb(84, 80, 80);
+  font-weight: 800;
+}
+.search {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 30px;
+  background: #f6f6f6;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}
+.search-input {
+  font-size: 12px;
+  font-family: sans-serif;
+  color: #616060;
+  margin-left: 3px;
+  border: none;
+  background: transparent;
+  flex: 1;
+  width: 30px;
+  outline: none;
+}
+.texte {
+  position: absolute;
+  top: 55%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
