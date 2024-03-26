@@ -2,7 +2,6 @@ body {
   margin: 0;
   background-color: black;
   overflow-y: hidden;
-  /* font-family, sans-serif; */
 }
 .video {
   position: absolute;
@@ -14,23 +13,16 @@ body {
 .container {
   justify-content: center;
 }
-
-.barre {
-  text-align: center;
-}
-.acceuil {
-  text-align: center;
-}
 h1 {
   font-size: 80px;
-  color: rgba(247, 218, 157, 0.984);
+  color: rgba(244, 63, 63, 0.984);
   font-weight: 550;
   font-family: "Bangers", system-ui;
   font-style: normal;
   letter-spacing: 7px;
   cursor: pointer;
   -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: rgb(53, 145, 243);
+  -webkit-text-stroke-color: rgb(243, 229, 152);
 }
 h1 span {
   transition: 0.5s;
@@ -43,34 +35,117 @@ h1:hover span {
   text-shadow: 0 0 10px #f0f2f4, 0 0 20px #f0f2f4, 0 0 80px #f0f2f4,
     0 0 120px #f0f2f4, 0 0 160px #f0f2f4;
 }
-.acceuil span {
-  color: rgb(84, 80, 80);
-  font-weight: 800;
-}
-.search {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 30px;
-  background: #f6f6f6;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-}
-.search-input {
-  font-size: 12px;
-  font-family: sans-serif;
-  color: #616060;
-  margin-left: 3px;
-  border: none;
-  background: transparent;
-  flex: 1;
-  width: 30px;
-  outline: none;
-}
 .texte {
+  text-align: right;
+  margin-right: 150px;
+}
+button.btn {
+  width: 10%;
+  padding: 0.5rem;
+  border-radius: 20px;
+  border-color: rgb(134, 76, 10);
+}
+button.btn.btn-random {
+  width: 10%;
+  padding: 0.5rem;
+  border-radius: 20px;
+  border-color: rgb(134, 76, 10);
+}
+button.btn:hover {
+  background: rgb(226, 181, 31);
+}
+form {
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+}
+form input {
+  width: 17%;
+  padding: 0.5rem;
+  border-radius: 20px;
+  border-color: rgb(134, 76, 10);
+}
+/* loading */
+.loading .pokeball {
+  display: inline-block;
+  max-width: 120px;
+  margin: 2rem 1rem;
+  animation: loadingEffect 1s infinite;
+}
+@keyframes loadingEffect {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* result */
+.result.active {
+  cursor: pointer;
+  width: 200px;
+  height: 350px;
+  margin: 1.2rem auto 0;
+  color: #462d1f;
+  text-transform: uppercase;
+  text-align: right;
+  margin-right: 150px;
+}
+.pokebox {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 9px 13px -6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+.pokebox .closebox {
   position: absolute;
-  top: 55%;
-  left: 60%;
-  transform: translate(-50%, -50%);
+  right: 0.75em;
+  top: 0.25em;
+  font-size: 1em;
+}
+/* circle shape */
+.pokebox.found::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.pokebox.found .pokemon {
+  margin-bottom: 1rem;
+  width: 110px;
+  height: 180px;
+}
+.pokebox.found .pokename {
+  font-family: "Bangers", system-ui;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  line-height: 1;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+}
+/* notfound */
+.pokebox.notfound span:not(span.pokenumber, span.closebox) {
+  color: #462d1f;
+  display: inline-block;
+  font-size: 4em;
+  font-family: "Bangers";
+  letter-spacing: 5px;
+  font-weight: 500;
+}
+.pokebox.notfound img {
+  max-width: 150px;
+}
+.pokebox.notfound span.pokenumber {
+  color: red;
+}
+.d-none {
+  display: none;
 }
