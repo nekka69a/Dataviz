@@ -1,13 +1,14 @@
 body {
   margin: 0;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   overflow-y: hidden;
 }
 .video {
   position: absolute;
   width: 100%;
   right: 0;
-  bottom: 0;
+  bottom: 1;
+  top: 0;
   z-index: -1;
 }
 .container {
@@ -36,20 +37,20 @@ h1:hover span {
     0 0 120px #f0f2f4, 0 0 160px #f0f2f4;
 }
 .texte {
-  text-align: right;
-  margin-right: 150px;
+  text-align: left;
+  margin-left: 150px;
 }
 button.btn {
   width: 10%;
   padding: 0.5rem;
   border-radius: 20px;
-  border-color: rgb(134, 76, 10);
+  border-color: rgb(243, 229, 152);
 }
 button.btn.btn-random {
   width: 10%;
   padding: 0.5rem;
   border-radius: 20px;
-  border-color: rgb(134, 76, 10);
+  border-color: rgb(243, 229, 152);
 }
 button.btn:hover {
   background: rgb(226, 181, 31);
@@ -64,7 +65,7 @@ form input {
   width: 17%;
   padding: 0.5rem;
   border-radius: 20px;
-  border-color: rgb(134, 76, 10);
+  border-color: rgb(243, 229, 152);
 }
 /* loading */
 .loading .pokeball {
@@ -87,42 +88,65 @@ form input {
   width: 200px;
   height: 350px;
   margin: 1.2rem auto 0;
-  color: #462d1f;
+  color: rgba(244, 63, 63, 0.984);
   text-transform: uppercase;
   text-align: right;
-  margin-right: 150px;
+  margin-right: 1200px;
+}
+
+.contain {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
 }
 .pokebox {
+  width: 230px;
   height: 100%;
-  width: 100%;
-  box-shadow: 0px 9px 13px -6px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(6px);
+  backdrop-filter: sepia(30%);
 }
-.pokebox .closebox {
-  position: absolute;
-  right: 0.75em;
-  top: 0.25em;
-  font-size: 1em;
+
+.abilities {
+  font-family: "Bangers", system-ui;
+  text-transform: capitalize;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: sepia(30%);
 }
-/* circle shape */
-.pokebox.found::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: sepia(80%);
+  font-family: "Bangers", system-ui;
+  text-transform: capitalize;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+  color: rgb(243, 229, 152);
 }
-.pokebox.found .pokemon {
-  margin-bottom: 1rem;
-  width: 110px;
-  height: 180px;
+
+p span.abi {
+  color: rgba(244, 63, 63, 0.984);
 }
+
+p span.typ {
+  color: rgba(244, 63, 63, 0.984);
+}
+
 .pokebox.found .pokename {
   font-family: "Bangers", system-ui;
   text-transform: capitalize;
@@ -131,20 +155,27 @@ form input {
   letter-spacing: 3px;
   margin-bottom: 0.5rem;
 }
-/* notfound */
-.pokebox.notfound span:not(span.pokenumber, span.closebox) {
-  color: #462d1f;
-  display: inline-block;
-  font-size: 4em;
-  font-family: "Bangers";
-  letter-spacing: 5px;
-  font-weight: 500;
+
+.pokebox.found .pokemon {
+  margin-bottom: 1rem;
+  width: 110px;
+  height: 180px;
 }
-.pokebox.notfound img {
-  max-width: 150px;
+/* notfound */
+.pokebox.notfound {
+  color: rgba(244, 63, 63, 0.984);
+  justify-content: center;
+  font-size: 1.1em;
+  font-family: "Bangers";
+  letter-spacing: 3px;
+  font-weight: 100;
+  width: 250px;
+}
+.pokebox.notfound h4 {
+  font-size: 3.5em;
 }
 .pokebox.notfound span.pokenumber {
-  color: red;
+  color: rgb(243, 229, 152);
 }
 .d-none {
   display: none;

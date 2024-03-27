@@ -33,6 +33,9 @@ const getPokemon = async (URI, text) => {
     console.log(data);
     const {
       id,
+      stats,
+      abilities,
+      types,
       name,
       sprites: {
         other: {
@@ -40,16 +43,28 @@ const getPokemon = async (URI, text) => {
         },
       },
     } = data;
+    console.log(abilities);
     setTimeout(() => {
       loading.classList.add("d-none");
       result.className = "result active";
-      result.innerHTML = `
+      var ab = `
+      <div class="contain">
         <div class="pokebox found">
-          <span class="closebox">x</span>
           <img src="${front_default}" alt="${name}" class="pokemon">
           <h3 class="pokename">${name}</h3>
           <p class="pokenumber">#${id.toString().padStart(3, "0")}</p>
-        </div>`;
+        </div>
+        <div class="abilities">
+        <p class= "stats">${stats[0].base_stat}${stats[0].stat.name}</p>`;
+      for (let i = 0; i < abilities.length; i++) {
+        ab += `<p class="abilities"><span class="abi">Ability name:</span></br>${abilities[i].ability.name}</p>`;
+      }
+      for (let i = 0; i < types.length; i++) {
+        ab += `<p class="types"><span class="typ">Type:</span></br>${types[i].type.name}</p>`;
+      }
+      ab += `</div> </div>`;
+      result.innerHTML = ab;
+      console.log(ab);
       search.value = null;
     }, 1600);
   } catch (error) {
@@ -64,7 +79,6 @@ const getPokemon = async (URI, text) => {
       result.className = "result active";
       result.innerHTML = `
       <div class="pokebox notfound">
-        <span class="closebox">x</span>
         <h4><span>4</span><span>0</span><span>4</span></h4>
         <p>Pokemon <span class="pokenumber">${pokenumber}</span> not found</p>
       </div>`;
