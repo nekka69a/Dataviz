@@ -4,6 +4,8 @@ body {
   overflow-y: hidden;
 }
 .video {
+  height: 100%;
+  object-fit: cover;
   position: absolute;
   width: 100%;
   right: 0;
@@ -15,15 +17,15 @@ body {
   justify-content: center;
 }
 h1 {
-  font-size: 80px;
+  font-size: 100px;
   color: rgba(244, 63, 63, 0.984);
   font-weight: 550;
   font-family: "Bangers", system-ui;
-  font-style: normal;
   letter-spacing: 7px;
   cursor: pointer;
-  -webkit-text-stroke: 2px;
+  -webkit-text-stroke: 0.8px;
   -webkit-text-stroke-color: rgb(243, 229, 152);
+  margin-bottom: 1.5vw;
 }
 h1 span {
   transition: 0.5s;
@@ -32,38 +34,37 @@ h1:hover span:nth-child(1) {
   margin-right: 10px;
 }
 h1:hover span {
-  color: #f0f2f4;
-  text-shadow: 0 0 10px #f0f2f4, 0 0 20px #f0f2f4, 0 0 80px #f0f2f4,
-    0 0 120px #f0f2f4, 0 0 160px #f0f2f4;
+  color: rgb(245, 157, 5);
+  text-shadow: 0 0 10px rgb(245, 157, 5), 0 0 20px #fffffd, 0 0 80px #fffffd,
+    0 0 120px #fffffd, 0 0 160px #fffffd;
 }
 .texte {
   text-align: left;
-  margin-left: 150px;
+  margin-left: 8vw;
 }
 button.btn {
-  width: 10%;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 20px;
   border-color: rgb(243, 229, 152);
 }
 button.btn.btn-random {
-  width: 10%;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 20px;
   border-color: rgb(243, 229, 152);
 }
 button.btn:hover {
-  background: rgb(226, 181, 31);
+  background: rgb(245, 157, 5);
 }
 form {
-  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
-  padding: 10px;
+  padding: 0.5rem 1rem;
 }
 form input {
-  width: 17%;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 15%;
   border-radius: 20px;
   border-color: rgb(243, 229, 152);
 }
@@ -85,15 +86,12 @@ form input {
 /* result */
 .result.active {
   cursor: pointer;
-  width: 200px;
   height: 350px;
   margin: 1.2rem auto 0;
-  color: rgba(244, 63, 63, 0.984);
-  text-transform: uppercase;
+  color: rgb(245, 157, 5);
   text-align: right;
-  margin-right: 1200px;
+  margin-right: 1160px;
 }
-
 .contain {
   display: flex;
   justify-content: space-between;
@@ -106,76 +104,73 @@ form input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  backdrop-filter: sepia(30%);
+  backdrop-filter: sepia(100%);
+  border-radius: 20px;
 }
-
 .abilities {
-  font-family: "Bangers", system-ui;
-  text-transform: capitalize;
-  font-size: 1rem;
-  line-height: 1;
-  letter-spacing: 3px;
-  margin-bottom: 0.5rem;
+  font-family: "Bangers";
+  font-size: 1.2rem;
+  line-height: 1.1rem;
+  letter-spacing: 2px;
   width: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  backdrop-filter: sepia(30%);
+  backdrop-filter: sepia(100%);
+  border-radius: 20px;
 }
-
 p {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  backdrop-filter: sepia(80%);
-  font-family: "Bangers", system-ui;
-  text-transform: capitalize;
-  font-size: 1rem;
+  backdrop-filter: sepia(100%);
+  font-family: "Bangers";
   line-height: 1;
   letter-spacing: 3px;
+  margin-top: 0.5;
   margin-bottom: 0.5rem;
-  color: rgb(243, 229, 152);
+  color: rgba(244, 63, 63, 0.984);
+  line-height: 1.1rem;
 }
-
 p span.abi {
-  color: rgba(244, 63, 63, 0.984);
+  color: rgb(245, 157, 5);
+  letter-spacing: 3xp;
+  font-size: 1.1em;
 }
-
 p span.typ {
-  color: rgba(244, 63, 63, 0.984);
+  color: rgb(245, 157, 5);
+  font-size: 1.1em;
 }
-
 .pokebox.found .pokename {
-  font-family: "Bangers", system-ui;
-  text-transform: capitalize;
-  font-size: 1.2rem;
-  line-height: 1;
+  font-family: "Bangers";
+  line-height: 1.8rem;
+  font-size: 1.6em;
   letter-spacing: 3px;
   margin-bottom: 0.5rem;
 }
-
 .pokebox.found .pokemon {
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
   width: 110px;
-  height: 180px;
+  height: 200px;
 }
+
 /* notfound */
 .pokebox.notfound {
   color: rgba(244, 63, 63, 0.984);
   justify-content: center;
-  font-size: 1.1em;
   font-family: "Bangers";
   letter-spacing: 3px;
-  font-weight: 100;
-  width: 250px;
+  width: 230px;
 }
 .pokebox.notfound h4 {
   font-size: 3.5em;
+  font-weight: 150;
 }
 .pokebox.notfound span.pokenumber {
-  color: rgb(243, 229, 152);
+  color: rgba(244, 63, 63, 0.984);
+  font-size: 1.2;
 }
 .d-none {
   display: none;

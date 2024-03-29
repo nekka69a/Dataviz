@@ -27,7 +27,7 @@ const getPokemon = async (URI, text) => {
   try {
     const res = await fetch(URI);
     if (!res.ok || !text || text <= 0 || text >= 650) {
-      throw "Please only numbers between 1 and 649 or type the name correctly";
+      throw "Only numbers between 1 and 649 or type the name correctly";
     }
     const data = await res.json();
     console.log(data);
